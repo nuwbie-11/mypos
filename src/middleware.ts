@@ -1,13 +1,29 @@
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
+import { type NextRequest, NextResponse } from "next/server";
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
+
+export default function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // First, handle the internationalization
+  const response = intlMiddleware(request);
+
+  // Extract locale from pathname (e.g., /id, /en)
+  const pathnameLocale = pathname.split("/")[1];
+  const isValidLocale = routing.locales.includes(pathnameLocale as any);
+
+  // If user is at root path with locale (e.g., /id or /en), redirect to dashboard
+  if (isValidLocale && pathname === `/${pathnameLocale}`) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${pathnameLocale}/dashboard`;
+    return NextResponse.redirect(url);
+  }
+
+  return response;
+}
 
 export const config = {
-  // Match all pathnames except for
-  // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-  // - … the ones containing a dot (e.g. `favicon.ico`)
-  matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\..*|callback).*)",
-  ],
+  matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
 };
