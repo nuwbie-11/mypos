@@ -1,0 +1,26 @@
+{
+  "HomePage": {
+    "title": "Hello world!"
+  },
+  "POS": {
+    "title": "Point of Sale"
+  },
+  "Products": {
+    "title": "Products"
+  },
+  "Sales": {
+    "title": "Sales"
+  },
+  "Transactions": {
+    "title": "Transactions"
+  },
+  "Customers": {
+    "title": "Customers"
+  },
+  "Reports": {
+    "title": "Reports"
+  },
+  "Settings": {
+    "title": "Settings"
+  }
+}

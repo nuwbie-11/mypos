@@ -1,0 +1,33 @@
+{
+  "HomePage": {
+    "title": "Halo dunia!"
+  },
+  "breadcrumb": {
+    "pos": "Point of Sale",
+    "dashboard": "Dashboard"
+  },
+  "POS": {
+    "title": "Point of Sale"
+  },
+  "dashboard": {
+    "title": "Dashboard"
+  },
+  "Sales": {
+    "title": "Penjualan"
+  },
+  "Transactions": {
+    "title": "Transaksi"
+  },
+  "Customers": {
+    "title": "Pelanggan"
+  },
+  "Reports": {
+    "title": "Laporan"
+  },
+  "Settings": {
+    "title": "Pengaturan"
+  },
+  "common": {
+    "list_of": "{x} List"
+  }
+}
