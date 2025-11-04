@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
+import Sidebar from "@/components/sidebar";
 
 type Props = {
   children: React.ReactNode;
@@ -14,5 +15,5 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
-  return <div className="flex min-h-screen w-full">{children}</div>;
+  return <Sidebar>{children}</Sidebar>;
 }

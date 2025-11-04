@@ -1,26 +1,14 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "dashboard": {
+    "title": "Dashboard"
   },
-  "POS": {
-    "title": "Point of Sale"
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, we couldn't find the page you're looking for. It might have been removed, had its name changed, or is temporarily unavailable.",
+    "backHome": "Go Back Home"
   },
-  "Products": {
-    "title": "Products"
-  },
-  "Sales": {
-    "title": "Sales"
-  },
-  "Transactions": {
-    "title": "Transactions"
-  },
-  "Customers": {
-    "title": "Customers"
-  },
-  "Reports": {
-    "title": "Reports"
-  },
-  "Settings": {
-    "title": "Settings"
+  "lang": {
+    "en": "🇬🇧 English",
+    "id": "🇮🇩 Bahasa Indonesia"
   }
 }
