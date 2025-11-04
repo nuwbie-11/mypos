@@ -3,14 +3,17 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from "../ui/sidebar";
 import { Separator } from "../ui/separator";
 import { ThemeToggle } from "../theme-toggle";
 import { LanguageSwitcher } from "../language-switcher";
+import { cookies } from "next/headers";
 
 interface SidebarProps {
   children: React.ReactNode;
 }
 
-export default function Sidebar({ children }: SidebarProps) {
+export default async function Sidebar({ children }: SidebarProps) {
+  const sideparOpen = (await cookies()).get("sidebar_state")?.value === "true";
+
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={sideparOpen}>
       <AppSidebar />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">

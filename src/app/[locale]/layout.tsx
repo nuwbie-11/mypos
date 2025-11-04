@@ -22,10 +22,6 @@ export default async function LocaleLayout({
 
   let messages;
 
-  console.log("====================================");
-  console.log("locale", locale);
-  console.log("====================================");
-
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
