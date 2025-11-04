@@ -1,33 +1,24 @@
 {
-  "HomePage": {
-    "title": "Halo dunia!"
-  },
-  "breadcrumb": {
-    "pos": "Point of Sale",
-    "dashboard": "Dashboard"
-  },
-  "POS": {
-    "title": "Point of Sale"
-  },
   "dashboard": {
-    "title": "Dashboard"
+    "title": "Dasbor",
+    "test": "tes"
   },
-  "Sales": {
-    "title": "Penjualan"
+  "NotFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "description": "Maaf, kami tidak dapat menemukan halaman yang Anda cari. Mungkin halaman tersebut telah dihapus, nama halaman tersebut telah diubah, atau halaman tersebut sementara tidak tersedia.",
+    "backHome": "Kembali ke Beranda"
   },
-  "Transactions": {
-    "title": "Transaksi"
+  "lang": {
+    "en": "🇬🇧 EN",
+    "id": "🇮🇩 ID"
   },
-  "Customers": {
-    "title": "Pelanggan"
-  },
-  "Reports": {
-    "title": "Laporan"
-  },
-  "Settings": {
-    "title": "Pengaturan"
-  },
-  "common": {
-    "list_of": "{x} List"
+  "nav": {
+    "menu": {
+      "title": {
+        "dashboard": "Dasbor",
+        "projects": "Proyek",
+        "alerts": "Peringatan"
+      }
+    }
   }
 }

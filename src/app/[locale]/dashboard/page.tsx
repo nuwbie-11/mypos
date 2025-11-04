@@ -1,16 +1,8 @@
-import React from "react";
-import { getTranslations } from "next-intl/server";
+"use client";
 
-export async function generateMetadata() {
-  const t = await getTranslations();
-  return {
-    title: t("dashboard.title"),
-    description: "Dashboard",
-  };
-}
+import { useTranslations } from "next-intl";
 
-export default async function Page() {
-  const t = await getTranslations();
-
-  return <div className="">{t("dashboard.title")}</div>;
+export default function Page() {
+  const t = useTranslations("dashboard");
+  return <div className="">{t("test")}</div>;
 }

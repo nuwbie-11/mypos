@@ -1,29 +1,48 @@
-import createMiddleware from "next-intl/middleware";
-import { routing } from "./i18n/routing";
-import { type NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { routing } from "@/i18n/routing";
 
-const intlMiddleware = createMiddleware(routing);
-
-export default function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // First, handle the internationalization
-  const response = intlMiddleware(request);
+  // Check if the pathname starts with one of our locales
+  const pathLocale = pathname.split("/")[1];
+  const isLocalePath = routing.locales.includes(pathLocale as any);
 
-  // Extract locale from pathname (e.g., /id, /en)
-  const pathnameLocale = pathname.split("/")[1];
-  const isValidLocale = routing.locales.includes(pathnameLocale as any);
+  // If the path doesn't start with a valid locale and it's not a static asset or API route
+  if (
+    !isLocalePath &&
+    !pathname.startsWith("/_next") &&
+    !pathname.startsWith("/api")
+  ) {
+    // In a real app you might want to store user's preferred locale in a cookie
+    // For now, we will redirect to default locale
+    // But we should respect the locale that's in the user's session or last selection
 
-  // If user is at root path with locale (e.g., /id or /en), redirect to dashboard
-  if (isValidLocale && pathname === `/${pathnameLocale}`) {
-    const url = request.nextUrl.clone();
-    url.pathname = `/${pathnameLocale}/dashboard`;
-    return NextResponse.redirect(url);
+    // Check for a locale preference in cookies
+    const preferredLocale =
+      request.cookies.get("NEXT_LOCALE")?.value || routing.defaultLocale;
+    const locale = routing.locales.includes(preferredLocale as any)
+      ? preferredLocale
+      : routing.defaultLocale;
+
+    // For root path, redirect to dashboard
+    if (pathname === "/") {
+      return NextResponse.redirect(
+        new URL(`/${locale}/dashboard`, request.url)
+      );
+    }
+
+    return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
   }
 
-  return response;
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
+  matcher: [
+    // Skip all internal paths (_next)
+    "/((?!_next/static|_next/image|favicon.ico).*)",
+    // Include the root route for locale redirect
+    "/",
+  ],
 };
