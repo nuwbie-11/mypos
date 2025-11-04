@@ -1,6 +1,7 @@
 {
   "dashboard": {
-    "title": "Dashboard"
+    "title": "Dashboard",
+    "test": "test"
   },
   "NotFound": {
     "title": "Page Not Found",
@@ -10,5 +11,14 @@
   "lang": {
     "en": "🇬🇧 English",
     "id": "🇮🇩 Bahasa Indonesia"
+  },
+  "nav": {
+    "menu": {
+      "title": {
+        "dashboard": "Dashboard",
+        "projects": "Projects",
+        "alerts": "Alerts"
+      }
+    }
   }
 }

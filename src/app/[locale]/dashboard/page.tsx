@@ -1,3 +1,8 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function Page() {
-  return <div className="">Trending up this month</div>;
+  const t = useTranslations("dashboard");
+  return <div className="">{t("test")}</div>;
 }

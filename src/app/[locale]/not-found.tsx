@@ -2,10 +2,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getTranslations } from "next-intl/server";
 import Sidebar from "@/components/sidebar";
+import { cookies } from "next/headers";
 
-export default async function NotFound({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "NotFound" });
+export default async function NotFound() {
+  const locale = (await cookies()).get("NEXT_LOCALE")?.value || "id";
+
+  const t = await getTranslations("NotFound");
 
   return (
     <Sidebar>

@@ -1,14 +1,24 @@
 {
   "dashboard": {
-    "title": "Dashboard"
+    "title": "Dasbor",
+    "test": "tes"
   },
   "NotFound": {
     "title": "Halaman Tidak Ditemukan",
-    "description": "Maaf, kami tidak dapat menemukan halaman yang Anda cari. Halaman tersebut mungkin telah dihapus, nama telah diubah, atau sedang tidak tersedia sementara.",
+    "description": "Maaf, kami tidak dapat menemukan halaman yang Anda cari. Mungkin halaman tersebut telah dihapus, nama halaman tersebut telah diubah, atau halaman tersebut sementara tidak tersedia.",
     "backHome": "Kembali ke Beranda"
   },
   "lang": {
     "en": "🇬🇧 English",
     "id": "🇮🇩 Bahasa Indonesia"
+  },
+  "nav": {
+    "menu": {
+      "title": {
+        "dashboard": "Dasbor",
+        "projects": "Proyek",
+        "alerts": "Peringatan"
+      }
+    }
   }
 }

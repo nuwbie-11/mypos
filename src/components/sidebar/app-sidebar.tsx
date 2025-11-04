@@ -30,12 +30,12 @@ const data = {
   teams: [],
   navMain: [
     {
-      title: "Dashboard",
+      title: "dashboard",
       url: "/dashboard",
       icon: LayoutDashboard,
     },
     {
-      title: "Test Page",
+      title: "alerts",
       url: "/alert",
       icon: AlertCircleIcon,
     },
