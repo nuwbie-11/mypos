@@ -2,9 +2,8 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import Sidebar from "@/components/sidebar";
-import { cookies } from "next/headers";
 
-export default async function LocaleLayout({
+export default async function ProtectedLayout({
   children,
   params,
 }: {
@@ -22,15 +21,6 @@ export default async function LocaleLayout({
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
     messages = (await import(`../../messages/id.json`)).default;
-  }
-
-  const isAuthenticated =
-    (await cookies()).get("isAuthenticated")?.value === "false";
-
-  if (!!isAuthenticated) {
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      {children}
-    </NextIntlClientProvider>;
   }
 
   return (
