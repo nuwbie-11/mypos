@@ -43,6 +43,8 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const corpName = process.env.NEXT_PUBLIC_CORP_NAME || "Point of Sale";
+
   return (
     <Sidebar variant="inset" collapsible="icon" {...props}>
       <SidebarHeader>
@@ -54,7 +56,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             >
               <a href="#">
                 <GalleryVerticalEnd className="!size-5" />
-                <span className="text-base font-semibold">Acme Inc.</span>
+                <span className="text-base font-semibold">{corpName}</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

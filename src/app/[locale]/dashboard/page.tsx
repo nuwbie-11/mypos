@@ -1,8 +1,12 @@
-"use client";
+import PageContainer from "@/components/page-container";
+import { getTranslations } from "next-intl/server";
 
-import { useTranslations } from "next-intl";
+export default async function Page() {
+  const t = await getTranslations("dashboard");
 
-export default function Page() {
-  const t = useTranslations("dashboard");
-  return <div className="">{t("test")}</div>;
+  return (
+    <PageContainer>
+      <div className="h-dvh">{t("test")}</div>
+    </PageContainer>
+  );
 }

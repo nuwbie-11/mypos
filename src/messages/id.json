@@ -1,6 +1,6 @@
 {
   "dashboard": {
-    "title": "Dasbor",
+    "title": "Dashboard",
     "test": "tes"
   },
   "NotFound": {
@@ -15,7 +15,7 @@
   "nav": {
     "menu": {
       "title": {
-        "dashboard": "Dasbor",
+        "dashboard": "Dashboard",
         "projects": "Proyek",
         "alerts": "Peringatan"
       }
