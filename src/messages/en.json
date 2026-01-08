@@ -17,7 +17,18 @@
       "title": {
         "dashboard": "Dashboard",
         "projects": "Projects",
-        "alerts": "Alerts"
+        "alerts": "Alerts",
+        "users": "Users",
+        "products": "Products",
+        "sales": "Sales",
+        "sub": {
+          "user-management": "Users Management",
+          "user-roles": "User Roles",
+          "product-management": "Products Management",
+          "product-categories": "Product Categories",
+          "entry-sales": "Entry",
+          "transaction-sales": "Transaction"
+        }
       }
     }
   }

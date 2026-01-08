@@ -60,7 +60,9 @@ export function NavMain({
                       <SidebarMenuSubItem key={subItem.title}>
                         <SidebarMenuSubButton asChild>
                           <a href={subItem.url}>
-                            <span>{subItem.title}</span>
+                            <span>
+                              {navTranslations(`sub.${subItem.title}`)}
+                            </span>
                           </a>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>

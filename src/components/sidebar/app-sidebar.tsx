@@ -3,8 +3,12 @@
 import * as React from "react";
 import {
   AlertCircleIcon,
+  Boxes,
+  BoxIcon,
   GalleryVerticalEnd,
   LayoutDashboard,
+  ShoppingBasket,
+  Users,
 } from "lucide-react";
 
 import { NavMain } from "@/components/sidebar/nav-main";
@@ -19,6 +23,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { url } from "inspector";
 
 // This is sample data.
 const data = {
@@ -33,6 +38,51 @@ const data = {
       title: "dashboard",
       url: "/dashboard",
       icon: LayoutDashboard,
+    },
+    {
+      title: "users",
+      url: "/users",
+      icon: Users,
+      items: [
+        {
+          title: "user-management",
+          url: "/users/management",
+        },
+        {
+          title: "user-roles",
+          url: "/users/roles",
+        },
+      ],
+    },
+    {
+      title: "products",
+      url: "/products",
+      icon: BoxIcon,
+      items: [
+        {
+          title: "product-management",
+          url: "/product/management",
+        },
+        {
+          title: "product-categories",
+          url: "/product/categories",
+        },
+      ],
+    },
+    {
+      title: "sales",
+      url: "/sales",
+      icon: ShoppingBasket,
+      items: [
+        {
+          title: "entry-sales",
+          url: "/sales/entry",
+        },
+        {
+          title: "transaction-sales",
+          url: "/sales/transactions",
+        },
+      ],
     },
     {
       title: "alerts",

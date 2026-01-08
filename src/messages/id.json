@@ -17,7 +17,18 @@
       "title": {
         "dashboard": "Dashboard",
         "projects": "Proyek",
-        "alerts": "Peringatan"
+        "alerts": "Peringatan",
+        "users": "Pengguna",
+        "products": "Produk",
+        "sales": "Penjualan",
+        "sub": {
+          "user-management": "Manajemen Pengguna",
+          "user-roles": "Peran Pengguna",
+          "product-management": "Manajemen Produk",
+          "product-categories": "Kategori Produk",
+          "entry-sales": "Input Penjualan",
+          "transaction-sales": "Transaksi Penjualan"
+        }
       }
     }
   }
